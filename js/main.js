@@ -1,8 +1,8 @@
 const myProjects = ["Project 1", "Project 2"];
-listItem(myProjects);
+myProjects.forEach(listItem);
 
-function listItem(myProjects) {
+function listItem(listOfProjects) {
   let project = document.createElement("li");
-  project.innerHTML = myProjects;
+  project.innerHTML = listOfProjects;
   document.getElementById("projectList").appendChild(project);
 }
