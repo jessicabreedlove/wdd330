@@ -1,6 +1,6 @@
 const myProjects = [
-  { label: "Project 1 ", url: "week1/index.html" },
-  { label: "Project 2 ", url: "week2/index.html" },
+  { label: "Project 1 - Story Editor ", url: "week1/story_editor.html" },
+  { label: "Project 2 ", url: "week1/story_editor.html" },
 ];
 myProjects.forEach(listItem);
 
