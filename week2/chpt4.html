@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2 Notes & Exercises</title>
+    <script>
+      const quiz = [
+        ["What is Superman's real name?", "Clark Kent"],
+        ["What is Wonder Woman's real name?", "Diana Prince"],
+        ["What is Batman's real name?", "Bruce Wayne"],
+      ];
+
+      function start(quiz) {
+        let score = 0;
+
+        // main game loop
+        for (const [question, answer] of quiz) {
+          const response = ask(question);
+          check(response, answer);
+        }
+        // end of main game loop
+
+        gameOver();
+
+        // function declarations
+        function ask(question) {
+          return prompt(question);
+        }
+
+        function check(response, answer) {
+          if (response === answer) {
+            alert("Correct!");
+            score++;
+          } else {
+            alert(`Wrong! The correct answer was ${answer}`);
+          }
+        }
+
+        function gameOver() {
+          alert(
+            `Game Over, you scored ${score} point${score !== 1 ? "s" : ""}`
+          );
+        }
+      }
+      start(quiz);
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Week 2</h1>
+    </header>
+    <main>
+      <h2>Chapter 4 Project Practice</h2>
+      <section>
+        <h2>Functions</h2>
+        <ul>
+          <li>
+            function rest(...args) collects all the arguments entered into an
+            array
+          </li>
+          <li></li>
+        </ul>
+      </section>
+    </main>
+    <footer>&copy2022 Jessica Reece</footer>
+  </body>
+</html>
