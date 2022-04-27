@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 2 Notes & Exercises</title>
+    <script>
+      const quiz = [
+        ["What is Superman's real name?", "Clark Kent"],
+        ["What is Wonder Woman's real name?", "Diana Prince"],
+        ["What is Batman's real name?", "Bruce Wayne"],
+      ];
+
+      let score = 0;
+      for (const [question, answer] of quiz) {
+        const response = prompt(question);
+        if (response === answer) {
+          alert("Correct!");
+          score++;
+        } else {
+          alert(`Wrong! The correct answer was ${answer}`);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Week 2</h1>
+    </header>
+    <main>
+      <h2>Chapter 3 Project Practice</h2>
+      <section>
+        <h3>Array Methods</h3>
+        <ul>
+          <li>.pop() removes last</li>
+          <li>.shift() removes first</li>
+          <li>.push() adds to end</li>
+          <li>.unshift() adds to the beginning</li>
+        </ul>
+        <ul>
+          <li>
+            .join() turns the array into a string with all the items seperated
+            by commas
+          </li>
+          <li>.slice(start-index, end-index) creates a subarray</li>
+          <li>
+            .splice(start-index, how-many-to-remove, 'value to insert') removes
+            items and inserts new in their place
+          </li>
+          <li>.sort() sorts alphabetical</li>
+          <li>.indexOf('value to check if is in the array')</li>
+          <li>.includes() returns true or false</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Maps</h3>
+        <ul>
+          <li>Maps are similar to dictionaries</li>
+        </ul>
+      </section>
+    </main>
+    <footer>&copy2022 Jessica Reece</footer>
+  </body>
+</html>
