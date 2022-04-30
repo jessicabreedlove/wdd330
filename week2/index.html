@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Work</title>
+  </head>
+  <body>
+    <header>
+      <h1>Group Project 1</h1>
+    </header>
+    <main>
+      Enter Text <input id="userInput" type="text" /> Enter Number<input
+        id="userInput2"
+        type="text"
+      />
+      <button onclick="reader()" id="userBtn">Click Here</button>
+      <button onclick="numReader()">Number Sum</button>
+      <button onclick="add()">+</button>
+      <div id="showContents"></div>
+    </main>
+    <footer></footer>
+  </body>
+  <script>
+    function reader() {
+      let input = document.getElementById("userInput").value;
+      showContents(input);
+    }
+
+    function numReader() {
+      console.log("worked");
+      let input = document.getElementById("userInput").value;
+      if (!isNaN(input)) {
+        let num = parseInt(input);
+        sum(num);
+      } else {
+        showContents("That is not a Number");
+      }
+    }
+
+    function sum(num) {
+      let total = 0;
+      for (let i = 0; i <= num; i++) {
+        total += i;
+      }
+      showContents(total);
+    }
+
+    function add() {
+      let input1 = parseInt(document.getElementById("userInput").value);
+      let input2 = parseInt(document.getElementById("userInput2").value);
+      let total = input1 + input2;
+      showContents(total);
+    }
+
+    function showContents(content) {
+      document.getElementById("showContents").innerHTML = content;
+    }
+  </script>
+</html>
