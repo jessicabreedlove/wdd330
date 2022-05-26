@@ -1,35 +1,39 @@
-function generateTodoHTML(todoLIst, inputValue, property) {
-  //generate div
+function generateTodoHTML(todoList, inputValue, property) {
+  /*
+    inputValue = string
+    property = {"completed", "uncompleted"}
+    */
+  // generating DIV
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo');
   todoDiv.classList.toggle(property);
 
-  //generate li
+  // generating LI
   const newTodo = document.createElement('li');
-  newTodo.innerText = inputValue;
+  newTodo.innerText = inputValue; // not sure what I am doing here
   newTodo.classList.add('todo-item');
 
-  todoDiv.appendChild(newTodo);
+  todoDiv.appendChild(newTodo); // appending the list under the todo div
 
   if (property === 'uncompleted') {
-    //generate checkmark btn
-    const completedBtn = document.createElement('button');
-    completedBtn.innerHTML = '<i class="fas fa-check-circle"></i>';
-    completedBtn.classList.add('complete-btn');
-    todoDiv.appendChild(completedBtn);
+    // generate check mark button
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML = '<i class="fas fa-check-circle"></i>';
+    completedButton.classList.add('complete-btn');
+    todoDiv.appendChild(completedButton);
   } else if (property === 'completed') {
-    //generate restore btn
-    const restoreBtn = document.createElement('button');
-    restoreBtn.innerHTML = '<i class="fas fa-history"></i>';
-    restoreBtn.classList.add('restore-btn');
-    todoDiv.appendChild(restoreBtn);
+    // generate restore button
+    const restoreButton = document.createElement('button');
+    restoreButton.innerHTML = '<i class="fas fa-history"></i>';
+    restoreButton.classList.add('restore-btn');
+    todoDiv.appendChild(restoreButton);
   }
 
-  // generate delete btn
-  const deleteBtn = document.createElement('button');
-  deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
-  deleteBtn.classList.add('delete-btn');
-  todoDiv.appendChild(deleteBtn);
+  // generate a delete button
+  const trashButton = document.createElement('button');
+  trashButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
+  trashButton.classList.add('trash-btn');
+  todoDiv.appendChild(trashButton);
 
   // append div to exisiting ul in html
   todoList.appendChild(todoDiv);

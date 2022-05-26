@@ -1,4 +1,4 @@
-import generateTodoHTML from 'todo.js';
+import generateTodoHTML from './todo.js';
 
 //selectors
 const todoInput = document.querySelector('.todo-input');
