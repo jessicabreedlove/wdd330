@@ -11,19 +11,32 @@
       <h1>Todos</h1>
     </header>
     <main>
-      <ul id="todoList">
-        <li id="itemInList"></li>
-      </ul>
-      <form id="inputListItem" action="">
-        <label for="listItem">
-          <input type="text" name="listItem" />
-          +<input type="submit" id="addBtn" name="addlistItem" />
-        </label>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+
+      <form id="inputListItem">
+        <div id="input-select">
+          <div id="input-elements">
+            <label for="todo-input">
+              <input type="text" name="todo-input" class="todo-input" />
+              <button class="todo-button" type="submit">
+                <i class="fas fa-plus"></i>
+              </button>
+            </label>
+          </div>
+          <div class="select">
+            <select name="todos" class="filter-todo">
+              <option value="All">All</option>
+              <option value="Completed">Completed</option>
+              <option value="Uncompleted">Uncompleted</option>
+            </select>
+          </div>
+        </div>
       </form>
     </main>
     <footer>&copy2022 Jessica Reece</footer>
-
-    <!-- <script src="js/todos.js"></script> -->
-    <script src="js/ls.js"></script>
+    <script type="module" src="js/todo.js"></script>
+    <script type="module" src="js/utilities.js"></script>
   </body>
 </html>
