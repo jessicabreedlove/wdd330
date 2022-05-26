@@ -164,3 +164,14 @@
 .wrapper .todo .list .item input:checked::after {
   display: block;
 }
+
+/* different views */
+
+.filters div {
+  display: block;
+  background-color: orange;
+}
+
+.filterAll {
+  background-color: pink;
+}

@@ -31,21 +31,23 @@ if (JSON.parse(localStorage.getItem('todoItemsTut')) !== null) {
 }
 
 //removing item from list and localStorage
-const inputs = document.querySelectorAll('input[name="itemCheck');
-for (let i = 0; i < inputs.length; i++) {
-  inputs[i].addEventListener('click', function (e) {
-    if (JSON.parse(localStorage.getItem('todoItemsTut')) !== null) {
-      let itemsLocal = [];
-      JSON.parse(localStorage.getItem('todoItemsTut')).map((todo) => {
-        if (todo.id != e.target.id) {
-          itemsLocal.push(todo);
-        }
-      });
-      localStorage.setItem('todoItemsTut', JSON.stringify(itemsLocal));
-      window.location.reload();
-    }
-  });
-}
+// const inputs = document.querySelectorAll('input[name="itemCheck');
+// for (let i = 0; i < inputs.length; i++) {
+//   inputs[i].addEventListener('click', function (e) {
+//     if (JSON.parse(localStorage.getItem('todoItemsTut')) !== null) {
+//       let itemsLocal = [];
+//       JSON.parse(localStorage.getItem('todoItemsTut')).map((todo) => {
+//         if (todo.id != e.target.id) {
+//           itemsLocal.push(todo);
+//         }
+//       });
+//       localStorage.setItem('todoItemsTut', JSON.stringify(itemsLocal));
+//       window.location.reload();
+//     }
+//   });
+// }
+
+//filter list
 
 //form submit
 formTodo.onsubmit = function (e) {
@@ -87,15 +89,5 @@ formTodo.onsubmit = function (e) {
       localStorage.setItem('todoItemsTut', JSON.stringify(items));
       window.location.reload();
     }
-    // const div = document.createElement('div');
-    // div.className = 'item';
-    // const input = document.createElement('input');
-    // input.type = 'checkbox';
-    // input.name = 'itemCheck';
-    // const p = document.createElement('p');
-    // p.innerHTML = value;
-    // div.append(input);
-    // div.append(p);
-    // list.append(div);
   }
 };
