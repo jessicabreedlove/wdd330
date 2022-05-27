@@ -4,24 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="css/base.css" />
     <title>W6 Todo List</title>
   </head>
   <body>
-    <div class="wrapper">
+    <header>
       <div class="date"></div>
       <h1 class="heading">TODO LIST</h1>
-
+    </header>
+    <main>
       <div class="todo">
         <div class="list"></div>
-
         <div class="addToDo">
           <form class="formToDo">
             <label class="formStyleInput">
               <input type="text" name="name" placeholder="Add your todo" />
-            </label id="formBtnid">
-            <label><input type="submit" name="submit" value="Add" /></label>
+              <input type="submit" name="submit" value="Add" />
+            </label>
           </form>
+
           <div class="filters">
             <div class="taskCount">
               <p>Number of Tasks: <span id="activeCount"></span></p>
@@ -32,7 +34,8 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
+    <footer>&copy2022 Jessica Reece</footer>
   </body>
   <script src="js/main.js"></script>
 </html>
