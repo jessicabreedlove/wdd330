@@ -20,3 +20,28 @@ body {
   align-items: center;
   justify-content: space-around;
 }
+
+header,
+footer {
+  width: 90%;
+  background-color: #151c20;
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+main {
+  background-color: #8b959b;
+  width: 90%;
+  border: 2px solid #151c20;
+  border-radius: 10px;
+}
+
+ol {
+  padding: 10px;
+}
+
+li {
+  padding: 2px;
+  margin-left: 5%;
+}
