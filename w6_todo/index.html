@@ -11,21 +11,25 @@
     <div class="wrapper">
       <div class="date"></div>
       <h1 class="heading">TODO LIST</h1>
+
       <div class="todo">
         <div class="list"></div>
-        <div class="filters">
-          <div class="taskCount">
-            <p>Number of Tasks: <span id="activeCount"></span></p>
-          </div>
-          <button id="filterAll">All</button>
-          <button id="filterActive">Active</button>
-          <button id="filterComplete">Completed</button>
-        </div>
+
         <div class="addToDo">
-          <form action="" class="formToDo">
-            <input type="text" name="name" placeholder="Add your todo" />
-            <input type="submit" name="submit" value="Add" />
+          <form class="formToDo">
+            <label class="formStyleInput">
+              <input type="text" name="name" placeholder="Add your todo" />
+            </label id="formBtnid">
+            <label><input type="submit" name="submit" value="Add" /></label>
           </form>
+          <div class="filters">
+            <div class="taskCount">
+              <p>Number of Tasks: <span id="activeCount"></span></p>
+            </div>
+            <button class="buttons" id="filterAll">All</button>
+            <button class="buttons" id="filterActive">Active</button>
+            <button class="buttons" id="filterComplete">Completed</button>
+          </div>
         </div>
       </div>
     </div>

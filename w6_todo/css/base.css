@@ -13,7 +13,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: #30343f;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -32,18 +32,19 @@
 .wrapper .heading {
   position: relative;
   font-size: 3.5rem;
-  color: #ff0;
+  color: #30343f;
   font-weight: 800;
 }
 
 .wrapper .todo {
   position: relative;
   height: 60%;
-  width: 50%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 0;
 }
 
 .wrapper .todo .addToDo {
@@ -57,30 +58,41 @@
   height: 100%;
 }
 
+.formToDo {
+  display: flex;
+  flex-direction: column;
+}
+
+#formBtnid {
+  display: block;
+  align-self: center;
+  justify-self: end;
+}
+
 .wrapper .todo .addToDo form input[type='text'] {
   width: 85%;
   border: 0;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #242423;
   padding: 15px 10px;
   background: transparent;
   outline: none;
-  color: white;
+  color: #242423;
   font-size: 1rem;
 }
 
 .wrapper .todo .addToDo form input[type='text']::placeholder {
-  color: white;
+  color: #242423;
 }
 
 .wrapper .todo .addToDo form input[type='text']:hover::placeholder {
-  color: #ccc;
+  color: #522e38;
 }
 .wrapper .todo .addToDo form input[type='submit'] {
-  width: 10%;
+  width: 15%;
   cursor: pointer;
   color: white;
-  border: 1px solid #017bf5f5;
-  background: #017bf5f5;
+  border: 1px solid #30343f;
+  background: #30343f;
   font-size: 1rem;
   font-weight: 550;
 }
@@ -95,6 +107,7 @@
   margin-right: 25px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
 }
 
 .wrapper .todo .list .item {
@@ -107,7 +120,7 @@
   justify-content: space-around;
   margin: 2px 0;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
 }
 
 .wrapper .todo .list .item p {
@@ -118,7 +131,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1rem;
-  color: #ff0;
+  color: #30343f;
 }
 
 .wrapper .todo .list .item input {
@@ -127,7 +140,7 @@
   appearance: none;
   height: 20px;
   width: 20px;
-  border: 2px solid black;
+  border: 2px solid #242423;
   outline: none;
 }
 
@@ -140,7 +153,7 @@
   left: 60%;
   width: 3px;
   height: 120%;
-  background: #ff0;
+  background: #242423;
   transform: rotate(30deg);
   display: none;
 }
@@ -152,7 +165,7 @@
   left: 0%;
   width: 3px;
   height: 80%;
-  background: #ff0;
+  background: #522e38;
   transform: rotate(-45deg);
   display: none;
 }
@@ -165,13 +178,33 @@
   display: block;
 }
 
-/* different views */
-
-.filters div {
+.taskCount {
   display: block;
-  background-color: orange;
+  background-color: #efefef;
+  color: black;
+  padding: 5px;
+  padding-right: 10px;
+  font-size: 1rem;
+  align-self: center;
 }
 
-.filterAll {
-  background-color: pink;
+/* view buttons */
+
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 5px;
+  border: 2px solid #30343f;
+}
+
+.buttons {
+  height: 2em;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.buttons:active {
+  background-color: #30343f;
+  color: white;
 }
