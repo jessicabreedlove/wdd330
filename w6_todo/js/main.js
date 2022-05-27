@@ -30,6 +30,8 @@ allBtn.addEventListener('click', () => {
   rebuildHTML('');
 });
 
+//active items count
+
 function rebuildHTML(filter) {
   //adding items to the list
   list.innerHTML = '';
@@ -66,6 +68,13 @@ function rebuildHTML(filter) {
           });
           saveLocal(localList);
         });
+        // //trying to get the count
+        // let activeCount = document.querySelector('#activeCount');
+        // lengthIWant = countingItems;
+        // activeCount.innerHTML = `${lengthIWant}`;
+        // activeCount.innerHTML = activeCount;
+        // console.log(countingItems);
+        //returns total with undefined
         const p = document.createElement('p');
         p.innerHTML = todo.name;
         div.append(input);
@@ -102,8 +111,6 @@ function getLocal() {
 //   });
 // }
 
-//filter list
-
 //form submit
 formTodo.onsubmit = function (e) {
   e.preventDefault();
@@ -111,18 +118,11 @@ formTodo.onsubmit = function (e) {
   let items = [];
   let id = Id();
   function Id() {
-    if (
-      JSON.parse(localStorage.getItem('todoItemsTut')) === null ||
-      JSON.parse(localStorage.getItem('todoItemsTut')).length == 0
-    ) {
+    if (getLocal() === null || getLocal().length == 0) {
       return 1;
     } else {
-      console.log(JSON.parse(localStorage.getItem('todoItemsTut')).length);
-      return (
-        JSON.parse(localStorage.getItem('todoItemsTut'))[
-          JSON.parse(localStorage.getItem('todoItemsTut')).length - 1
-        ].id + 1
-      );
+      console.log(getLocal().length);
+      return getLocal()[getLocal().length - 1].id + 1;
     }
   }
   let item = {
@@ -133,16 +133,16 @@ formTodo.onsubmit = function (e) {
   if (value == '') {
     alert('please add a value');
   } else {
-    if (JSON.parse(localStorage.getItem('todoItemsTut')) == null) {
+    if (getLocal() == null) {
       items.push(item);
-      localStorage.setItem('todoItemsTut', JSON.stringify(items));
+      saveLocal(items);
       rebuildHTML();
     } else {
-      JSON.parse(localStorage.getItem('todoItemsTut')).map((todo) => {
+      getLocal().map((todo) => {
         items.push(todo);
       });
       items.push(item);
-      localStorage.setItem('todoItemsTut', JSON.stringify(items));
+      saveLocal(items);
       rebuildHTML();
     }
   }
