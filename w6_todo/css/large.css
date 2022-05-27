@@ -1,2 +1,15 @@
 @media only screen and (min-width: 64rem) {
+  div.todo {
+    width: 60%;
+  }
+
+  .taskCount {
+    font-size: 1.2rem;
+    border: 1px solid #767676;
+  }
+
+  .buttons {
+    padding: 5px;
+    font-size: 1.2rem;
+  }
 }
