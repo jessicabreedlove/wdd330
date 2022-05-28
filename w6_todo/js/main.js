@@ -106,23 +106,6 @@ function getLocal() {
   return JSON.parse(localStorage.getItem('todoItemsTut'));
 }
 
-//removing item from list and localStorage
-// const inputs = document.querySelectorAll('input[name="itemCheck');
-// for (let i = 0; i < inputs.length; i++) {
-//   inputs[i].addEventListener('click', function (e) {
-//     if (JSON.parse(localStorage.getItem('todoItemsTut')) !== null) {
-//       let itemsLocal = [];
-//       JSON.parse(localStorage.getItem('todoItemsTut')).map((todo) => {
-//         if (todo.id != e.target.id) {
-//           itemsLocal.push(todo);
-//         }
-//       });
-//       localStorage.setItem('todoItemsTut', JSON.stringify(itemsLocal));
-//       window.location.reload();
-//     }
-//   });
-// }
-
 //form submit
 formTodo.onsubmit = function (e) {
   e.preventDefault();
