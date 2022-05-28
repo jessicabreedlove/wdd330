@@ -53,6 +53,10 @@ function rebuildHTML(filter) {
       .map((todo) => {
         const div = document.createElement('div');
         div.className = 'item';
+        div.id = todo.id;
+        const button = document.createElement('button');
+        button.classList.add('deleteBtn');
+        button.innerHTML = 'x';
         const input = document.createElement('input');
         input.type = 'checkbox';
         input.name = 'itemCheck';
@@ -68,21 +72,29 @@ function rebuildHTML(filter) {
           });
           saveLocal(localList);
         });
-        // //trying to get the count
-        // let activeCount = document.querySelector('#activeCount');
-        // lengthIWant = countingItems;
-        // activeCount.innerHTML = `${lengthIWant}`;
-        // activeCount.innerHTML = activeCount;
-        // console.log(countingItems);
-        //returns total with undefined
         const p = document.createElement('p');
         p.innerHTML = todo.name;
         div.append(input);
         div.append(p);
+        div.append(button);
         list.append(div);
       });
+    //to get the count
+    let activeCount = document.querySelector('#activeCount');
+    lengthIWant = localList.filter((i) => i.completed == false);
+    activeCount.innerHTML = `${lengthIWant.length}`;
   }
 }
+
+//function for delete
+list.addEventListener('click', (e) => {
+  if (e.target.className == 'deleteBtn') {
+    let id = e.target.parentNode.id;
+    let listLocal = getLocal().filter((item) => item.id != id);
+    saveLocal(listLocal);
+    rebuildHTML('');
+  }
+});
 
 //function to stringify
 function saveLocal(items) {
