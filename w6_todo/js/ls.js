@@ -9,3 +9,5 @@ function saveLocal(items) {
 function getLocal() {
   return JSON.parse(localStorage.getItem('todoItemsTut'));
 }
+
+export { getLocal, saveLocal };
